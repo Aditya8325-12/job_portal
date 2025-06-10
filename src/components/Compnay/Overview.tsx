@@ -8,6 +8,7 @@ import {
   reviews,
 } from "../sample_data.tsx/data";
 import { FaStar } from "react-icons/fa6";
+import CompanyReview from "./CompanyReview";
 function Overview() {
   const jobData = comapany_Info_jobData;
 
@@ -117,6 +118,7 @@ function Overview() {
       <div className="w-full p-4">
         <h1 className="text-2xl py-4 font-semibold text-gray-600">Reviews</h1>
         <div className="flex w-full">
+          {/* reviews  */}
           <div className="w-8/12 flex flex-col gap-4">
             {reviews.map((review, index) => (
               <div key={index} className="w-full p-2">
@@ -146,7 +148,30 @@ function Overview() {
               </div>
             ))}
           </div>
-          <div className="w-4/12 bg-green-300 h-36"></div>
+          {/* add review  */}
+          <div className="w-4/12 p-4 ">
+            <div className="border border-slate-200 shadow-xl rounded-sm    px-6 py-4">
+              <h1 className="text-xl font-semibold text-gray-700">
+                What would you say about your employer?
+              </h1>
+              <p className="text-lg text-gray-400 py-2">
+                Help fellow jobseekers by sharing your unique experience.
+              </p>
+
+              <button
+                className="w-full bg-sky-500 text-white py-2 rounded-lg mt-6 my-2 cursor-pointer"
+                onClick={() => document.getElementById("Creview").showModal()}
+              >
+                Write a review
+              </button>
+
+              <dialog id="Creview" className="modal">
+                <div className="modal-box w-11/12 max-w-2xl h-10/12 scroll-smooth mt-5 overflow-auto ">
+                  <CompanyReview review={{}} />
+                </div>
+              </dialog>
+            </div>
+          </div>
         </div>
         <div className="flex items-center py-4">
           <h1 className="text-lg  font-semibold text-sky-600 cursor-pointer ">
