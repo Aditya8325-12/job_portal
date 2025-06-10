@@ -1,0 +1,26 @@
+.navbar {
+    overflow: hidden;
+    opacity: 0.6; 
+  }
+
+  /* mouse over link */
+#navbar a:hover {
+    /* color:blue; */
+}
+
+
+#navbar a.active {
+    /* color: #33F0D6; */
+    float: right;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+#navbar .a {
+    float: right;
+    display: block;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+}
