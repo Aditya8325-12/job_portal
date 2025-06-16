@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Jobs from "@/components/Compnay/Jobs";
 import Overview from "@/components/Compnay/Overview";
-import WhyChouseUs from "@/components/Compnay/whyChouseUs";
-import Review from "@/components/Compnay/review";
+import WhyChouseUs from "@/components/Compnay/WhyChouseUs";
+import Review from "@/components/Compnay/Review";
 import Info from "@/components/Compnay/Info";
 function CompanyInfo() {
   const [activeTab, setActiveTab] = useState("overview");

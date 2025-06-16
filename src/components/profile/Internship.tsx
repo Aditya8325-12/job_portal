@@ -120,7 +120,7 @@ function Internship({ internship = {} }) {
           </button>
           <button
             type="submit"
-            className="bg-sky-400 py-2 px-6 rounded-sm cursor-pointer hover:bg-sky-300 focus:bg-sky-500 text-white"
+            className="bg-gradient-to-r  from-sky-400 to-blue-600 py-2 px-6 rounded-sm cursor-pointer hover:bg-sky-300 focus:bg-sky-500 text-white"
           >
             Save
           </button>

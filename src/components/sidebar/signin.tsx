@@ -32,7 +32,7 @@ function SignIn() {
   return (
     <div className="backdrop-blur-lg  p-8 space-y-12 transition-all duration-500 max-w-md mx-auto">
       <div className="text-center">
-        <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+        <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
           Welcome Back
         </h2>
         <p className="text-gray-500 mt-2">Please sign in to continue</p>
@@ -85,7 +85,7 @@ function SignIn() {
 
         <button
           type="submit"
-          className="w-full bg-gradient-to-r cursor-pointer from-blue-600 to-purple-600 text-white py-3 rounded-xl hover:opacity-90 transition duration-200 transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl"
+          className="w-full cursor-pointer  bg-gradient-to-r  from-sky-400 to-blue-600 text-white py-3 rounded-xl hover:opacity-90 transition duration-200 transform hover:-translate-y-0.5 shadow-lg hover:shadow-xl"
         >
           Sign In
         </button>
@@ -118,7 +118,7 @@ function SignIn() {
       <p className="text-center text-sm text-gray-600">
         Don't have an account?{" "}
         <a
-          href="/signup"
+          href="registration/User"
           className="text-blue-600 cursor-pointer hover:text-blue-800 font-semibold"
         >
           Sign up

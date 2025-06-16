@@ -7,6 +7,7 @@ import { FaRegBell } from "react-icons/fa6";
 import { useSelector, UseSelector } from "react-redux";
 import Image from "next/image";
 import { IoSearchOutline } from "react-icons/io5";
+import { RxDividerVertical } from "react-icons/rx";
 
 export default function Navbar({ handleOpenSidebar }) {
   const pathname = usePathname();
@@ -42,20 +43,22 @@ export default function Navbar({ handleOpenSidebar }) {
 
   const isActive = (route) =>
     pathname === route
-      ? "text-sky-600 hover:text-sky-500"
-      : textcolor + " hover:text-sky-500 ";
+      ? "bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent  hover:text-sky-500 text-lg"
+      : " text-gray-500 text-lg hover:text-sky-500 ";
 
   return (
     <div id="navbar" className={navHeader}>
-      <Link href="/" className="px-4 w-3/12">
-        <img
-          src="/img/images/logo2.png"
-          alt="Logo"
-          style={{ width: 35, height: 35 }}
-        />
-      </Link>
-
-      <div className="flex items-center text-lg gap-6 py-2 w-6/12 justify-center">
+      <div className="flex  items-center  gap-4 py-1 w-6/12 justify-start">
+        <Link href="/" className="pl-4 pr-2">
+          <img
+            src="/img/images/logo2.png"
+            alt="Logo"
+            style={{ width: 42, height: 35 }}
+          />
+        </Link>
+        <Link href="/" className={isActive("/")}>
+          Home
+        </Link>
         <Link href="/jobs" className={isActive("/jobs")}>
           Jobs
         </Link>
@@ -65,7 +68,10 @@ export default function Navbar({ handleOpenSidebar }) {
         <Link href="/companies" className={isActive("/companies")}>
           Companies
         </Link>
-        {!["/", "/jobs"].includes(pathname) && (
+
+        {/* search bar  */}
+
+        {/* {!["/", "/jobs"].includes(pathname) && (
           <div className="relative text-gray-600">
             <input
               className="border-2 border-gray-300 bg-white h-10 pl-4 pr-10 rounded-3xl text-sm focus:outline-none focus:ring-1 focus:ring-sky-500"
@@ -81,7 +87,7 @@ export default function Navbar({ handleOpenSidebar }) {
               }}
             />
           </div>
-        )}
+        )} */}
       </div>
 
       <div className="flex items-center gap-2 w-3/12 justify-end">
@@ -107,23 +113,35 @@ export default function Navbar({ handleOpenSidebar }) {
         )}
 
         {hasMounted && !userType && (
-          <div className="flex gap-2">
-            <button
+          <div className="flex gap-2 items-center">
+            {/* <button
               onClick={() => {
                 handleOpenSidebar("L");
               }}
               className={`${textcolor} border cursor-pointer border-gray-300 px-3 py-2 rounded-md hover:bg-gray-100 hover:text-sky-500 transition duration-300`}
             >
-              Sign In
+              Sign In  
             </button>
             <button
               onClick={() => {
                 handleOpenSidebar("R");
               }}
-              className="px-4 py-2 bg-sky-600 cursor-pointer text-white rounded-md hover:bg-sky-700 transition"
+              className="px-4 py-2 bg-gradient-to-r  from-sky-400 to-blue-600 cursor-pointer text-white rounded-md hover:bg-sky-700 transition"
             >
               Sign Up
-            </button>
+            </button> */}
+            <h1
+              className="text-md font-semibold text-sky-400 cursor-pointer hover:text-sky-600"
+              onClick={() => {
+                handleOpenSidebar("L");
+              }}
+            >
+              Sign In
+            </h1>
+            <h1 className="text-lg text-gray-400"> | </h1>
+            <h1 className="text-md  text-gray-400 cursor-pointer hover:text-gray-600">
+              Employers / Post Job
+            </h1>
           </div>
         )}
       </div>
